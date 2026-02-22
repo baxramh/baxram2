@@ -1,96 +1,106 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TNW Clone</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Ovoz → Matn</title>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-        <div class="logo">TNW <span>THE NEXT WEB</span></div>
-        <nav class="menu">
-          <a href="#">СПЕЦПРОЕКТ</a>
-          <a href="#">ОБЩЕСТВО</a>
-          <a href="#">ТЕХНОЛОГИЯ</a>
-          <a href="#">ЭКОНОМИКА</a>
-          <a href="#">ПОЛИТИКА</a>
-          <a href="#">СПОРТ</a>
-        </nav>
-  </header>
+<style>body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-  <!-- Banner rasm -->
-   <div class="container">
-       <section class="banner">
-         <img src="img/nav-baner.png" alt="Banner Image" />
-       </section>
-   </div>
+.container {
+  width: 350px;
+  background: #020617;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
 
-  <!-- Kichik yangiliklar -->
-<div class="container">
-  <section class="mini-news">
-    <div class="news-item" >
-      <img src="img/section 1.jpg" alt="Yangilik 1" />
-      <div class="text" style="background-color: #c00;">
-        <h3>Zambian president pardons gay couple sentenced to 15 years</h3>
-        <p>LUSAKA - Zambia's president has pardoned a gay couple sentenced to 15 years in prison in November under colonial-era sodomy laws in a case that caused a diplomatic row with the United States.
-Japhet Chataba, 39, and Steven Sambo, 31, were among nearly 3,000 inmates pardoned by...</p>
-      </div>
-    </div>
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
 
-    <div class="news-item" >
-      <img src="img/nav 2.jpg" alt="Yangilik 2" />
-      <div class="text" style="background-color: #9b3cbd;">
-        <h3>Is working from home wearing you out? Do this to avoid burnout</h3>
-        <p>Many of us aren't just working from home, we're panic working. Juggling the demands of work and childcare — amid the stress of living through a pandemic, record unemployment and job insecurity— is weighing on us.According to a recent Monster.com survey, 51% of workers said...</p>
-      </div>
-    </div>
+#startBtn {
+  background: #22c55e;
+  color: black;
+}
 
-    <div class="news-item" >
-      <img src="img/3.jpg" alt="Yangilik 3" />
-      <div class="text" style="background-color: #097d7d;">
-        <h3>A Midwestern capital is marching for racial justice — and getting results</h3>
-        <p>Outside of the governor’s mansion in Des Moines, Iowa, on Tuesday evening, Dionna Langford spoke to a crowd of hundreds of protesters with a bullhorn. “Black people,” said Langford, 28, who is African American, “if you have been harassed, terrorized, bullied by the police, in this city, make some...</p>
-      </div>
-    </div>
+#stopBtn {
+  background: #ef4444;
+  color: white;
+}
 
-    <div class="news-item" >
-      <img src="img/4.jpg" alt="Yangilik 4" />
-      <div class="text" style="background-color: #3e4ca4;">
-        <h3>Colin Powell calls Trump a liar, says he skirts the Constitution...</h3>
-        <p>After a week in which President Donald Trump threatened to use military force against protesters, Colin Powell and other retired military leaders blasted the commander-in-chief for taking steps they say will harm the relationship between the military and U.S. citizens...</p>
-      </div>
-    </div>
-  </section>
-</div>
-
-
-  <!-- Asosiy yangilik -->
+textarea {
+  width: 100%;
+  height: 150px;
+  margin-top: 15px;
+  border-radius: 8px;
+  padding: 10px;
+  resize: none;
+  font-size: 14px;
+} </style>
   <div class="container">
-  <section class="main-news">
-        <img src="img/5.jpg" alt="Asosiy yangilik rasmi" />
-        <div class="text">
-          <h2>Обзор молодежных планшетов: лучшие устройства за свои деньги</h2>
-          <p>Серия Huawei MediaPad давно известна покупателям - это одни из самых продаваемых Android-планшетов на рынке. Однако в компании решили провести ребрендинг, и модели MediaPad стали частью флагманской линейки Huawei MatePad, получили передовые функции, но при этом сохранили доступную цену.
-     В июне в России появятся два новых планшета: компактный MatePad T8 с диагональю 8 дюймов и MatePad с экраном 10,4 дюйма. Последний уже доступен по предзаказу с завтрашнего числа на сайте бренда. Модель ориентирована на молодых специалистов, студентов, семьи с детьми, которым нужно отличное устройство по привлекательной цене. Давайте разберемся, почему Huawei MatePad является одним из лучших предложений на рынке. Huawei MatePad выполнен из стекловолокна и поликарбоната: для прочности корпус имеет алюминиевую рамку. При диагонали экрана в 10,4 дюйма планшет весит всего 450 г и его толщина составляет 7,35 мм. Для сравнения Huawei MediaPad M5 Lite весил 475 г, его диагональ была меньше - 10,1 дюйма, а толщина составляла 7,7 мм...</p>
-        </div>
-    </section>
-</div>
+    <h1>🎤 Ovozdan matnga</h1>
 
-  <!-- Footer -->
-  <footer class="footer">
+    <button id="startBtn">🎙 Gapirishni boshlash</button>
+    <button id="stopBtn" disabled>⏹ To‘xtatish</button>
+
+    <textarea id="result" placeholder="Natija shu yerda chiqadi..."></textarea>
+  </div>
     
-        <div class="logo">TNW <span>THE NEXT WEB</span></div>
-        <nav class="menu">
-          <a href="#">СПЕЦПРОЕКТ</a>
-          <a href="#">ОБЩЕСТВО</a>
-          <a href="#">ТЕХНОЛОГИЯ</a>
-          <a href="#">ЭКОНОМИКА</a>
-          <a href="#">ПОЛИТИКА</a>
-          <a href="#">СПОРТ</a>
-        </nav>
-    
-  </footer>
+  <script>const startBtn = document.getElementById("startBtn");
+const stopBtn = document.getElementById("stopBtn");
+const result = document.getElementById("result");
+
+const SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
+
+if (!SpeechRecognition) {
+  alert("Brauzeringiz ovoz tanishni qo‘llab-quvvatlamaydi");
+}
+
+const recognition = new SpeechRecognition();
+recognition.lang = "uz-UZ"; // o‘zbekcha
+recognition.continuous = true;
+recognition.interimResults = true;
+
+let finalText = "";
+
+recognition.onresult = (event) => {
+  let interim = "";
+  for (let i = event.resultIndex; i < event.results.length; i++) {
+    const transcript = event.results[i][0].transcript;
+    if (event.results[i].isFinal) {
+      finalText += transcript + " ";
+    } else {
+      interim += transcript;
+    }
+  }
+  result.value = finalText + interim;
+};
+
+startBtn.onclick = () => {
+  recognition.start();
+  startBtn.disabled = true;
+  stopBtn.disabled = false;
+};
+
+stopBtn.onclick = () => {
+  recognition.stop();
+  startBtn.disabled = false;
+  stopBtn.disabled = true;
+};</script>
 </body>
 </html>
